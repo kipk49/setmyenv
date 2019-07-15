@@ -111,7 +111,10 @@ if [[ $conda == "Yes" ]]; then
 fi
 
 if [[ $condacyclus == "Yes" ]]; then
-	conda install cyclus-build-deps -y
+	conda config --add channels conda-forge
+	conda install -y openssh gxx_linux-64 gcc_linux-64 cmake make docker-pycreds git xo \ 		python-json-logger python=3.6 glibmm glib=2.56 libxml2 libxmlpp libblas libcblas \
+	liblapack pkg-config coincbc=2.9 boost-cpp hdf5 sqlite pcre gettext bzip2 xz \
+	setuptools nose pytables pandas jinja2 cython==0.26 websockets pprintpp
 fi
 
 if [[ $condapyne == "Yes" ]]; then
